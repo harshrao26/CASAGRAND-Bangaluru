@@ -175,7 +175,7 @@ export default function PropertiesSection() {
                                     <h3 className="text-sm sm:text-lg font-semibold text-black mb- leading-tight group-hover:text-[#fca326] transition-colors tight">
                                         Casagrand {property.name}
                                     </h3>
-                                    <div className="flex items-cen ter gap-1.5 text-gray-500 ">
+                                    <div className="flex items-cen ter mt-1 gap-1.5 text-gray-500 ">
                                         <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#1C8A9B]" />
                                         <span className="text-[12px] sm:text-[13px] font-medium text-gray-700">
                                             {property.location}{property.city ? `, ${property.city}` : ''}
@@ -184,7 +184,7 @@ export default function PropertiesSection() {
 
                                     {/* Key Specs Grid */}
                                     <div>
-                                        <p className="text-[10px] font-bold text-gray-500 mb-0.5">CONFIGURATION</p>
+                                        <p className="text-[10px] mt-2 font-bold text-gray-500 mb-0.5">CONFIGURATION</p>
                                         <p className="text-[12px] sm:text-[13px] font-  text-gray-800 leading-snug">
                                             {property.configuration}
                                         </p>
