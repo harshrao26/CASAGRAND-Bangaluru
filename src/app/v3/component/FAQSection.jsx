@@ -4,16 +4,16 @@ import { Plus, Minus } from 'lucide-react';
 
 const faqs = [
     {
-        question: "Why should I buy a home in Chennai?",
-        answer: "Chennai offers strong IT growth, metro connectivity, and steady property appreciation. It's ideal for families and professionals due to its schools, hospitals, and job hubs."
+        question: "Why should I buy a home in Bangalore?",
+        answer: "Bangalore offers strong IT growth, metro connectivity, and steady property appreciation. It's ideal for families and professionals due to its schools, hospitals, and job hubs."
     },
     {
         question: "Is investing near OMR (Old Mahabalipuram Road) worth it?",
-        answer: "OMR is Chennai's prime IT corridor with high rental demand. Upcoming infrastructure and commercial growth make it a smart long-term investment choice."
+        answer: "OMR is Bangalore's prime IT corridor with high rental demand. Upcoming infrastructure and commercial growth make it a smart long-term investment choice."
     },
     {
-        question: "Are Casagrand Chennai projects RERA approved?",
-        answer: "Yes, all Casagrand projects in Chennai are RERA-registered and approved by the Tamil Nadu Real Estate Regulatory Authority (TNRERA). You can buy your dream home with confidence, ensuring complete transparency and legal compliance."
+        question: "Are Casagrand Bangalore projects RERA approved?",
+        answer: "Yes, all Casagrand projects in Bangalore are RERA-registered and approved by the Tamil Nadu Real Estate Regulatory Authority (TNRERA). You can buy your dream home with confidence, ensuring complete transparency and legal compliance."
     },
     {
         question: "How do I book a site visit?",

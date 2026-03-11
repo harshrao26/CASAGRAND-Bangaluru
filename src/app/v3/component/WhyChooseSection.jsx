@@ -5,7 +5,7 @@ const cards = [
     {
         icon: Building2,
         title: "IT & Industry Hubs",
-        desc: "Strong demand driven by the booming IT and manufacturing sectors in Chennai."
+        desc: "Strong demand driven by the booming IT and manufacturing sectors in Bangalore."
     },
     {
         icon: MapPin,
@@ -40,10 +40,10 @@ export default function WhyChooseSection() {
         <section className="relative w-full py-8 bg-white overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center">
                 <h2 className="text-2xl sm:text-3xl text-[#1C1C1C] mb-4 tracking-tight leading-[1.1]">
-                    Why Invest in Chennai Real Estate?
+                    Why Invest in Bangalore Real Estate?
                 </h2>
                 <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-2xl mx-auto">
-                    Chennai continues to be one of India’s most stable and high-potential real estate markets, driven by strong IT growth, infrastructure development, and consistent demand from end-users and investors.
+                    Bangalore continues to be one of India’s most stable and high-potential real estate markets, driven by strong IT growth, infrastructure development, and consistent demand from end-users and investors.
                 </p>
             </div>
 

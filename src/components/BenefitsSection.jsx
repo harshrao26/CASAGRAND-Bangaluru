@@ -43,10 +43,10 @@ export default function BenefitsSection() {
                 {/* Section Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-                        Why Invest in Chennai Real Estate?
+                        Why Invest in Bangalore Real Estate?
                     </h2>
                     <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                        Chennai continues to be one of India’s most stable and high-potential real estate markets, driven by strong IT growth, infrastructure development, and consistent demand from end-users and investors.
+                        Bangalore continues to be one of India’s most stable and high-potential real estate markets, driven by strong IT growth, infrastructure development, and consistent demand from end-users and investors.
                     </p>
                 </div>
 
