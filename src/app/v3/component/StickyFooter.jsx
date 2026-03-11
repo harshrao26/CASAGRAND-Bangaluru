@@ -1,0 +1,93 @@
+'use client';
+
+import { Phone, MessageCircle, Mail, Download } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import LeadForm from '@/app/v3/component/LeadForm';
+
+export default function StickyFooter() {
+    const [isVisible, setIsVisible] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 300) {
+                setIsVisible(true);
+            } else {
+                setIsVisible(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    return (
+        <>
+            <div
+                className={`fixed bottom-0 left-0 right-0 z-40 md:bg-[#1C1C1C]5 backdrop-blur-md border-t border-white/10 shadow-[0_-10px_40px_rgba(0,0,0,0.3)] transition-transform duration-500 ${isVisible ? 'translate-y-0' : 'translate-y-full'
+                    }`}
+            >
+                <div className="max-w-md mx-auto px-4">
+                    <div className="grid grid-cols-2 gap-4 p-3 pb- md:pb-3">
+                    
+
+                     
+
+                    <button
+                        onClick={() => setShowModal(true)}
+                        className="flex  items-center justify-center gap-1 bg-[#FCB63A] hover:bg-[#FCB63A]/80 text-white py-2 rounded-xl shadow-lg transition-all active:scale-95"
+                    >
+                        <Download className="w-3.5 h-3.5" />
+                        <span className="text-xs md:text-sm font-bold wider">Brochure</span>
+                    </button>
+
+                    <button
+                        onClick={() => setShowModal(true)}
+                        className="flex  items-center justify-center gap-1 bg-white hover:bg-white/90 text-black py-2 rounded-xl shadow-lg transition-all active:scale-95"
+                    >
+                        <Mail className="w-3.5 h-3.5" />
+                        <span className="text-xs md:text-sm font-bold wider">Enquire</span>
+                    </button>
+                    </div>
+                </div>
+            </div>
+
+            {/* Lead-Gated Modal */}
+            {showModal && (
+                <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+                    <div className="bg-white rounded-2xl max-w-md w-full p-8 relative shadow-2xl animate-in fade-in zoom-in duration-200">
+                        {/* Close Button */}
+                        <button
+                            onClick={() => setShowModal(false)}
+                            className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+                        >
+                            <svg
+                                className="w-6 h-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M6 18L18 6M6 6l12 12"
+                                />
+                            </svg>
+                        </button>
+
+                        {/* Modal Content */}
+                        <div className="text-center mb-6">
+                            <h3 className="text-lg font-semibold text-gray-900 mb-2">Request Detailed  <br />Pricing & Floor Plans
+</h3>
+                            
+                        </div>
+
+                        {/* Lead Form */}
+                        <LeadForm />
+                    </div>
+                </div>
+            )}
+        </>
+    );
+}
