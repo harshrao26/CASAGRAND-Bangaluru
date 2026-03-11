@@ -33,7 +33,7 @@ export default function FilterBar() {
     const [localMax, setLocalMax] = useState(500);
 
     const budgetRanges = [
-        { label: 'All', min: 0, max: 1000000000 },
+        { label: 'All Projects', min: 0, max: 1000000000 },
         { label: '₹1 - ₹1.5 Cr', min: 100, max: 150 },
         { label: '₹1.5 - ₹2.5 Cr', min: 150, max: 250 },
         // { label: 'Above 2.5 Cr', min: 250, max: 500 },
@@ -74,25 +74,29 @@ export default function FilterBar() {
                             <p className="text-[10px] font-bold text-gray-400 tracking-widest uppercase">Select Budget</p>
                             <p className="text-[11px] font-bold text-[#f5a631]">{priceLabel(localMin)} – {priceLabel(localMax)}</p>
                         </div>
-                        <div className="flex flex-wrap gap-2">
-                            {budgetRanges.map((range) => {
+                        <div className="flex flex-wrap items-center gap-2">
+                            {budgetRanges.map((range, index) => {
                                 const isActive = localMin === range.min && localMax === range.max;
                                 return (
-                                    <button
-                                        key={range.label}
-                                        onClick={() => {
-                                            setLocalMin(range.min);
-                                            setLocalMax(range.max);
-                                            // Apply filters immediately and scroll
-                                            applyFilters({ city: localCity, priceRange: [range.min, range.max] });
-                                        }}
-                                        className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all border ${isActive
-                                                ? 'bg-[#FCB63A] border-[#FCB63A] text-black shadow-sm'
-                                                : 'bg-white border-gray-200 text-gray-600 hover:border-[#FCB63A] hover:text-[#FCB63A]'
-                                            }`}
-                                    >
-                                        {range.label}
-                                    </button>
+                                    <div key={range.label} className="flex items-center gap-2">
+                                        <button
+                                            onClick={() => {
+                                                setLocalMin(range.min);
+                                                setLocalMax(range.max);
+                                                // Apply filters immediately and scroll
+                                                applyFilters({ city: localCity, priceRange: [range.min, range.max] });
+                                            }}
+                                            className={`px-4 py-2 rounded-xl text-sm font-bold transition-all border ${isActive
+                                                ? 'bg-[#2D3E50] border-[#2D3E50] text-white shadow-md'
+                                                : 'bg-white border-gray-200 text-[#2D3E50] hover:border-[#FCB63A] hover:text-[#FCB63A]'
+                                                }`}
+                                        >
+                                            {range.label}
+                                        </button>
+                                        {index === 0 && (
+                                            <div className="w-[1px] h-8 bg-gray-200 mx-1" />
+                                        )}
+                                    </div>
                                 );
                             })}
                         </div>

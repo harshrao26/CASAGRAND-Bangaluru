@@ -492,31 +492,7 @@ export const PROJECTS_DATA = {
     ],
   },
 */
-  Caladium: {
-    name: "Caladium",
-    location: "Wagholi",
-    city: "Pune",
-    locationLink: "https://maps.app.goo.gl/EBXJeUn4B1XLydbe6",
-    acres: "2.8 Acres",
-    nearby: "Located in Upper Kharadi, Pune",
-    configuration: "2 BHK and 3 BHK",
-    startingRate: "Nil",
-    price: "₹1.2Cr - ₹1.5Cr",
-    budgetRange: "₹1.2Cr - ₹1.5Cr",
-    reraNumber: "RERA number - P52100080302",
-    description:
-      "Discover a landmark lifestyle at Upper Kharadi — an exclusive Singapore-styled apartment community spread across 2.8 acres. Designed with global sensibilities, this beautifully planned enclave features 334 premium 2 & 3 BHK residences that seamlessly blend urban sophistication with the calm elegance of nature.",
-    brochureLink:
-      "https://www.casagrand.co.in/wp-content/uploads/2025/05/Caladium-Brochure-Low.pdf",
-    websiteLink:
-      "https://www.casagrand.co.in/residential/ongoing-projects-pune/casagrand-caladium/",
-    image: "/images/Caladium/image copy 2.webp",
-    images: [
-      "/images/Caladium/image copy 2.webp",
-      "/images/Caladium/image copy.webp",
-      "/images/Caladium/image.webp",
-    ],
-  },
+ 
 };
 
 // Get all projects as an array

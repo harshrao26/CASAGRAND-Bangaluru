@@ -55,7 +55,7 @@ export default function WhyChooseSection() {
                         return (
                             <div
                                 key={idx}
-                                className="bg-white border border-gray-200 rounded-2xl p-5 flex flex-col hover:shadow-2xl hover:border-[#FCB63A]/20 transition-all duration-500 group/card cursor-default"
+                                className="bg-white border border-gray-200 rounded-2xl p-5 flex flex-col items-center text-center hover:shadow-2xl hover:border-[#FCB63A]/20 transition-all duration-500 group/card cursor-default"
                             >
                                 <div className="mb-8 h-14 w-14 flex items-center justify-center bg-[#FDF8F4] rounded-xl transition-colors duration-500 group-hover/card:bg-[#FCB63A]/10">
                                     <Icon className="w-8 h-8 text-[#FCB63A] transition-transform duration-500 group-hover/card:scale-110" strokeWidth={1.5} />
