@@ -33,10 +33,10 @@ export default function FilterBar() {
     const [localMax, setLocalMax] = useState(500);
 
     const budgetRanges = [
-        { label: 'Under 1 Cr', min: 0, max: 100 },
+        { label: 'All', min: 0, max: 1000000000 },
         { label: '₹1 - ₹1.5 Cr', min: 100, max: 150 },
         { label: '₹1.5 - ₹2.5 Cr', min: 150, max: 250 },
-        { label: 'Above 2.5 Cr', min: 250, max: 500 },
+        // { label: 'Above 2.5 Cr', min: 250, max: 500 },
     ];
 
     // Sync with context on mount (if filters were already applied)
@@ -67,6 +67,7 @@ export default function FilterBar() {
 
 
 
+
                     {/* Budget Range Filter */}
                     <div className="flex-[3]">
                         <div className="flex items-center justify-between mb-2">
@@ -85,11 +86,10 @@ export default function FilterBar() {
                                             // Apply filters immediately and scroll
                                             applyFilters({ city: localCity, priceRange: [range.min, range.max] });
                                         }}
-                                        className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all border ${
-                                            isActive
+                                        className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all border ${isActive
                                                 ? 'bg-[#FCB63A] border-[#FCB63A] text-black shadow-sm'
                                                 : 'bg-white border-gray-200 text-gray-600 hover:border-[#FCB63A] hover:text-[#FCB63A]'
-                                        }`}
+                                            }`}
                                     >
                                         {range.label}
                                     </button>

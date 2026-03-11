@@ -19,14 +19,14 @@ export const PROJECTS_DATA = {
       "https://www.casagrand.co.in/wp-content/uploads/2025/05/Promenade-Brochure-Online-1.pdf",
     websiteLink:
       "https://www.casagrand.co.in/residential/ongoing-projects-bangalore/casagrand-promenade/",
-    image: "/images/Promenade/Copy of Aerial Night view.jpg",
+    image: "/images/Promenade/Copy of Aerial Night view.webp",
     images: [
-      "/images/Promenade/Copy of Aerial Night view.jpg",
-      "/images/Promenade/Copy of Aerial_day.jpg",
-      "/images/Promenade/Copy of Balcony.jpg",
-      "/images/Promenade/Copy of Osr Podium_final.jpg",
-      "/images/Promenade/Copy of Pool View- day.jpg",
-      "/images/Promenade/Copy of poolview eve.jpg",
+      "/images/Promenade/Copy of Aerial Night view.webp",
+      "/images/Promenade/Copy of Aerial_day.webp",
+      "/images/Promenade/Copy of Balcony.webp",
+      "/images/Promenade/Copy of Osr Podium_final.webp",
+      "/images/Promenade/Copy of Pool View- day.webp",
+      "/images/Promenade/Copy of poolview eve.webp",
     ],
   },
   Estancia: {
@@ -47,8 +47,8 @@ export const PROJECTS_DATA = {
       "https://www.casagrand.co.in/wp-content/uploads/2025/09/Estancia-Brochure-low-res-2-1.pdf",
     websiteLink:
       "https://www.casagrand.co.in/residential/ongoing-projects-bangalore-kogilu/casagrand-estancia-casagrand/",
-    image: "/images/placeholder.webp",
-    images: ["/images/placeholder.webp"],
+    image: "",
+    images: [""],
   },
   Casablanca: {
     name: "Casablanca",
@@ -69,15 +69,16 @@ export const PROJECTS_DATA = {
       "https://www.casagrand.co.in/wp-content/uploads/2024/05/Casablanca-Brochure.pdf",
     websiteLink:
       "https://www.casagrand.co.in/residential/ongoing-projects-bengaluru-kanakapura-road/casagrand-casablanca/",
-    image: "/images/Casablanca/Copy of Aerial Night.jpg",
+    image: "/images/Casablanca/Copy of Aerial Night.webp",
     images: [
-      "/images/Casablanca/Copy of Aerial Night.jpg",
-      "/images/Casablanca/Copy of Clubhouse Dusk.jpg",
-      "/images/Casablanca/Copy of Main Entrance.jpg",
-      "/images/Casablanca/Copy of Podium Dusk (1).jpg",
-      "/images/Casablanca/Copy of Poduim 1 To Osr.jpg",
+      "/images/Casablanca/Copy of Aerial Night.webp",
+      "/images/Casablanca/Copy of Clubhouse Dusk.webp",
+      "/images/Casablanca/Copy of Main Entrance.webp",
+      "/images/Casablanca/Copy of Podium Dusk (1).webp",
+      "/images/Casablanca/Copy of Poduim 1 To Osr.webp",
     ],
   },
+  /*
   Flagship: {
     name: "Flagship",
     location: "Pallikaranai",
@@ -490,6 +491,7 @@ export const PROJECTS_DATA = {
       "/images/Osaka/Copy of Shot_33_Hiz_optimized.webp",
     ],
   },
+*/
   Caladium: {
     name: "Caladium",
     location: "Wagholi",
@@ -508,11 +510,11 @@ export const PROJECTS_DATA = {
       "https://www.casagrand.co.in/wp-content/uploads/2025/05/Caladium-Brochure-Low.pdf",
     websiteLink:
       "https://www.casagrand.co.in/residential/ongoing-projects-pune/casagrand-caladium/",
-    image: "/images/Caladium/image copy 2.png",
+    image: "/images/Caladium/image copy 2.webp",
     images: [
-      "/images/Caladium/image copy 2.png",
-      "/images/Caladium/image copy.png",
-      "/images/Caladium/image.png",
+      "/images/Caladium/image copy 2.webp",
+      "/images/Caladium/image copy.webp",
+      "/images/Caladium/image.webp",
     ],
   },
 };

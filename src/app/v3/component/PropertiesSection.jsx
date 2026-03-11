@@ -134,10 +134,10 @@ export default function PropertiesSection() {
                     <div className="max-w-5xl mx-auto ">
 
                         <h2 className="text-2xl sm:text-3xl text-center  text-black leading-[1.1] mb-4">
-                            Explore Casagrand Projects in Chennai
+                            Explore Casagrand Projects in Bangalore
                         </h2>
                         <p className="text-sm md:text-base text-center text-black leading-relaxed max-w-3xl mx-auto">
-                            Discover premium homes across Chennai's fastest-growing residential locations. Detailed project information is available after registration.
+                            Discover premium homes across Bangalore's fastest-growing residential locations. Detailed project information is available after registration.
                         </p>
                     </div>
                 </div>
