@@ -47,8 +47,14 @@ export const PROJECTS_DATA = {
       "https://www.casagrand.co.in/wp-content/uploads/2025/09/Estancia-Brochure-low-res-2-1.pdf",
     websiteLink:
       "https://www.casagrand.co.in/residential/ongoing-projects-bangalore-kogilu/casagrand-estancia-casagrand/",
-    image: "",
-    images: [""],
+    image: "/images/Estancia/Night Facade cam_Final_optimized.webp",
+    images: [
+      "/images/Estancia/Night Facade cam_Final_optimized.webp",
+      "/images/Estancia/Club Render_Final_optimized.webp",
+      "/images/Estancia/Front Road Cam_Update_optimized.webp",
+      "/images/Estancia/Pool Cam_Final_optimized.webp",
+      "/images/Estancia/Semi Aerial_Cam_optimized.webp",
+    ],
   },
   Casablanca: {
     name: "Casablanca",

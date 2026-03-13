@@ -36,10 +36,10 @@ const Header = () => {
                 <div className="flex- flex justify-start md:justify-center">
                     <Link href="/" className="relative block h-10 w-40 md:h-12 md:w-48 transition-transform hover:scale-105">
                         <Image
-                            src="/Casagrand-Logo1.webp"
+                            src={isScrolled ? "/Casagrand-Logo1.webp" : "/logo.png"}
                             alt="Casagrand Logo"
                             fill
-                            className="object-contain brightn00"
+                            className={`object-contain  ${!isScrolled ? 'scale-140' : 'scale-100'}`}
                             priority
                         />
                     </Link>
