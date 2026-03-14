@@ -47,27 +47,24 @@ const Hero = () => {
     return (
         <section className="relative pt-40 min-h-screen w-full overflow-hidden text-white bg-[#FDB33A]">
             {/* Background Image */}
-            <div className="absolute inset-0  z-0">
-                <Image
-                    src="/images/Estancia/Pool Cam_Final_optimized.webp"
-                    alt="Casagrand Estancia Pool View"
-                    fill
-                    className="object-cover opacity-200 saturate-200"
-                    priority
-                />
-                {/* Re-designed overlays for V3 luxury look */}
-                <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-black/70 to-black/0 z-10" />
-                {/* <div className="absolute inset-0 bg-gradient-to-t from-[#FDB33A]/70 via-transparent to-[#FDB33A]/70 z-10" /> */}
-            </div>
+            <Image
+                src="/images/Estancia/Pool Cam_Final_optimized.webp"
+                alt="Casagrand Estancia Pool View"
+                fill
+                className="object-cover z-0"
+                priority
+            />
+            {/* Overlay for better text readability */}
+            <div className="absolute inset-0 bg-black/40 z-10" />
 
-            <div className="relative z-20 h-full w-full flex flex-col items-center justify-e ter px-4">
+            <div className="relative z-20 h-full w-full flex flex-col items-center justify-center px-4">
                 {/* Main Content */}
-                <div className="max-w-7xl tx w-full text-center md:mt-0 mt-10 mb-12 animate-fade-in-up">
-                    <h1 className="text-2xl sm:text-4xl font-semibold mb-4 lead ing-[1.1] text-white drop-shadow-2xl">
-                        South India's 2nd    Developer <br />
-                        Discover Premium Living with<span className="bg- text-[#FCB63A]  px-2 py-1">Casagrand</span>
+                <div className="max-w-7xl w-full text-center md:mt-0 mt-10 mb-12 animate-fade-in-up">
+                    <h1 className="text-2xl sm:text-4xl font-semibold mb-4 leading-[1.1] text-white drop-shadow-2xl">
+                        South India's 2nd Developer <br />
+                        Discover Premium Living with <span className="text-[#FCB63A] px-2 py-1">Casagrand</span>
                     </h1>
-                    <p className="text-sm md:text-base max-w-3xl mx-auto font-semibold trackin g-wide text-white drop-shad ow-md leading-relaxed">
+                    <p className="text-sm md:text-base max-w-3xl mx-auto font-semibold tracking-wide text-white drop-shadow-md leading-relaxed">
                         20 Years of Real Estate Excellence <br /> 160+ Landmark Projects | 55,000+ Happy Families
                     </p>
                 </div>
