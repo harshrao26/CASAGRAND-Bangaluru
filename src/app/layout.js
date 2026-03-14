@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+import UTMTracker from "@/components/UTMTracker";
 import { Montserrat, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
@@ -26,6 +28,9 @@ export default function RootLayout({ children }) {
       <body
         // className={`${montserrat.variable} ${cormorant.variable} font-sans antialiased`}
       >
+        <Suspense fallback={null}>
+            <UTMTracker />
+        </Suspense>
         {children}
       </body>
     </html>

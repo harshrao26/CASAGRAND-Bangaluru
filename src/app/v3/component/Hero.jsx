@@ -2,12 +2,14 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { Loader2 } from 'lucide-react';
+import { useUTMs } from '@/hooks/useUTMs';
 import LeadForm from './LeadForm';
 
 const Hero = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState(null);
     const [showModal, setShowModal] = useState(false);
+    const utmContext = useUTMs();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -17,11 +19,16 @@ const Hero = () => {
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData.entries());
 
+        const payload = {
+            ...data,
+            ...utmContext
+        };
+
         try {
             const response = await fetch('/api/salesforce', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data),
+                body: JSON.stringify(payload),
             });
             const result = await response.json();
             if (result.success) {
