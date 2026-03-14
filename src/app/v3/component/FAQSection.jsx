@@ -8,8 +8,8 @@ const faqs = [
         answer: "Bangalore offers strong IT growth, metro connectivity, and steady property appreciation. It's ideal for families and professionals due to its schools, hospitals, and job hubs."
     },
     {
-        question: "Is investing near OMR (Old Mahabalipuram Road) worth it?",
-        answer: "OMR is Bangalore's prime IT corridor with high rental demand. Upcoming infrastructure and commercial growth make it a smart long-term investment choice."
+        question: "Which part of Bangalore is good for investment?",
+        answer: "Several areas in Bengaluru are good for investment, especially locations where Casagrand has launched projects. Popular investment micro-markets include Electronic City, Yelahanka, Kanakapura Road, and Hennur due to strong IT connectivity, infrastructure growth, and upcoming residential developments."
     },
     {
         question: "Are Casagrand Bangalore projects RERA approved?",
