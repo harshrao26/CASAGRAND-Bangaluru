@@ -7,6 +7,32 @@ import { useProjectContext } from '@/context/ProjectContext';
 import { getAllProjects, getProject } from '@/data/projects';
 import { MapPin, Sparkles, ChevronLeft, ChevronRight, Home, IndianRupee, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 
+const getProjectTags = (config) => {
+    if (!config) return null;
+    
+    const lowerConfig = config.toLowerCase();
+    const hasApartment = lowerConfig.includes('apartment');
+    const hasVilla = lowerConfig.includes('villa');
+    
+    // Only show the badge if it's an Apartment or Villa
+    if (!hasApartment && !hasVilla) return null;
+
+    const parts = [];
+    
+    // Extract BHK part (e.g., "3/4 BHK")
+    const bhkMatch = config.match(/[\d/]+\s*BHK/i);
+    if (bhkMatch) {
+        parts.push(bhkMatch[0].toUpperCase());
+    }
+    
+    // Type part
+    if (hasApartment) parts.push('Apartment');
+    if (hasVilla) parts.push('Villa');
+    
+    const uniqueParts = [...new Set(parts)];
+    return uniqueParts.join(' • ');
+};
+
 function PropertySlideshow({ property }) {
     const images = property.images?.length ? property.images : [property.image];
     const [current, setCurrent] = useState(0);
@@ -22,6 +48,15 @@ function PropertySlideshow({ property }) {
 
     return (
         <div className="relative h-[200px] sm:h-[300px] md:h-96 overflow-hidden rounded-t-xl mb-3 sm:mb-6 group/slide">
+            {/* Project Tags / Batch */}
+            {getProjectTags(property.configuration) && (
+                <div className="absolute top-0 right-0 z-20">
+                    <div className="bg-[#fca326] text-black text-[10px] sm:text-[12px] font-bold px-3 py-1.5 sm:px-4 sm:py-2 rounded-bl-xl shadow-lg border-l border-b border-white/20 animate-in fade-in slide-in-from-right-4 duration-500 whitespace-nowrap">
+                        {getProjectTags(property.configuration)}
+                    </div>
+                </div>
+            )}
+
             {/* Location Ribbon */}
             {/* <div className="absolute top-0 left-6 z-20">
                 <div className="bg-[#1C8A9B] text-white text-[11px] font-semibold px-4 pt-2 pb-4 [clip-path:polygon(0_0,100%_0,100%_100%,50%_80%,0_100%)] tracking-widest relative shadow-lg">
@@ -89,11 +124,15 @@ export default function PropertiesSection() {
     // Parse a price string to a numeric value in Lakhs for comparison
     const parseLakhs = (priceStr) => {
         if (!priceStr) return 0;
-        const s = priceStr.toLowerCase().replace(/[₹\s,]/g, '');
-        const nums = s.match(/[\d.]+/g);
-        if (!nums) return 0;
-        let val = parseFloat(nums[0]);
-        if (s.includes('cr')) val = val * 100;
+        const clean = priceStr.toLowerCase();
+        const match = clean.match(/([\d.]+)\s*(cr|l|lakh|lc)/i);
+        if (!match) return 0;
+        
+        let val = parseFloat(match[1]);
+        const unit = match[2].toLowerCase();
+        if (unit === 'cr' || unit === 'lc') {
+            val = val * 100;
+        }
         return Math.round(val);
     };
 
@@ -134,10 +173,10 @@ export default function PropertiesSection() {
                     <div className="max-w-5xl mx-auto ">
 
                         <h2 className="text-2xl sm:text-3xl text-center  text-black leading-[1.1] mb-4">
-                            Explore Casagrand Projects in Bangalore
+                            Explore Casagrand Projects in Chennai
                         </h2>
                         <p className="text-sm md:text-base text-center text-black leading-relaxed max-w-3xl mx-auto">
-                            Discover premium homes across Bangalore's fastest-growing residential locations. Detailed project information is available after registration.
+                            Discover premium homes across Chennai's fastest-growing residential locations. Detailed project information is available after registration.
                         </p>
                     </div>
                 </div>
@@ -175,7 +214,7 @@ export default function PropertiesSection() {
                                     <h3 className="text-sm sm:text-lg font-semibold text-black mb- leading-tight group-hover:text-[#fca326] transition-colors tight">
                                         Casagrand {property.name}
                                     </h3>
-                                    <div className="flex items-cen ter mt-1 gap-1.5 text-gray-500 ">
+                                    <div className="flex items-cen ter gap-1.5 text-gray-500 ">
                                         <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#1C8A9B]" />
                                         <span className="text-[12px] sm:text-[13px] font-medium text-gray-700">
                                             {property.location}{property.city ? `, ${property.city}` : ''}
@@ -184,7 +223,7 @@ export default function PropertiesSection() {
 
                                     {/* Key Specs Grid */}
                                     <div>
-                                        <p className="text-[10px] mt-2 font-bold text-gray-500 mb-0.5">CONFIGURATION</p>
+                                        <p className="text-[10px] font-bold text-gray-500 mb-0.5">CONFIGURATION</p>
                                         <p className="text-[12px] sm:text-[13px] font-  text-gray-800 leading-snug">
                                             {property.configuration}
                                         </p>
@@ -233,7 +272,7 @@ export default function PropertiesSection() {
                                     </div>
 
                                     {/* Action Buttons */}
-                                    <div className="mt-auto flex    gap-2.5">
+                                    <div className="mt-auto flex  gap-2.5">
                                         <button
                                             onClick={() => handleViewDetails(property)}
                                             className="bg-[#fca326] hover:bg-[#e09121] text-black py-2.5 px-4 rounded-xl transition-all text-[9px] sm:text-[11px] font-bold w-full shadow-sm active:scale-95"
