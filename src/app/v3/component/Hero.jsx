@@ -55,7 +55,7 @@ const Hero = () => {
                 priority
             />
             {/* Overlay for better text readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/0 via-transparent to-black/70 z-10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/0 via-transparent to-black/10 z-10" />
 
             <div className="relative z-20 h-full w-full flex flex-col items-center justify-center px-4">
                 {/* Main Content */}
