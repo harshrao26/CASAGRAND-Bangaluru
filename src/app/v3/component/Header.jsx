@@ -5,11 +5,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import LeadForm from '@/app/v3/component/LeadForm';
 
-const Header = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
+const Header = ({ forceScrolled = false }) => {
+    const [isScrolled, setIsScrolled] = useState(forceScrolled);
     const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
+        if (forceScrolled) return;
         const handleScroll = () => {
             if (window.scrollY > 20) {
                 setIsScrolled(true);
@@ -20,13 +21,15 @@ const Header = () => {
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [forceScrolled]);
+
+    const headerScrolled = isScrolled || forceScrolled;
 
     return (
         <>
             <header
-                className={`fixed top-0 left-0 w-full z-50 py-4 px-6 md:px-12 flex items-center justify-between transition-all duration-500 ${isScrolled
-                    ? 'bg-white/90 backdrop-blur-lg border-b border-white/10 py-3 shadow-lg'
+                className={`fixed top-0 left-0 w-full z-50 py-4 px-6 md:px-12 flex items-center justify-between transition-all duration-500 ${headerScrolled
+                    ? 'bg-white/90 backdrop-blur-lg border-b border-gray-100 py-3 shadow-lg'
                     : 'bg-transparent border-b border-transparent'
                     }`}
             >
@@ -36,10 +39,10 @@ const Header = () => {
                 <div className="flex- flex justify-start md:justify-center">
                     <Link href="/" className="relative block h-10 w-40 md:h-12 md:w-48 transition-transform hover:scale-105">
                         <Image
-                            src={isScrolled ? "/Casagrand-Logo1.webp" : "/logo.png"}
+                            src={headerScrolled ? "/Casagrand-Logo1.webp" : "/logo.png"}
                             alt="Casagrand Logo"
                             fill
-                            className={`object-contain  ${!isScrolled ? 'scale-140' : 'scale-100'}`}
+                            className={`object-contain  ${!headerScrolled ? 'scale-140' : 'scale-100'}`}
                             priority
                         />
                     </Link>

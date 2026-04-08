@@ -1,5 +1,6 @@
 "use client";
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { Loader2 } from 'lucide-react';
 import { useUTMs } from '@/hooks/useUTMs';
@@ -10,6 +11,7 @@ const Hero = () => {
     const [submitStatus, setSubmitStatus] = useState(null);
     const [showModal, setShowModal] = useState(false);
     const utmContext = useUTMs();
+    const router = useRouter();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -34,6 +36,8 @@ const Hero = () => {
             if (result.success) {
                 setSubmitStatus({ type: 'success', message: 'Thank you! We will contact you shortly.' });
                 e.target.reset();
+                // Redirect to thank you page
+                router.push('/thank-you');
             } else {
                 setSubmitStatus({ type: 'error', message: result.message || 'Something went wrong.' });
             }
